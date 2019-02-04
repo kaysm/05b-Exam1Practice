@@ -28,13 +28,14 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 
 import testing_helper
 import time
+import math as math
 
 
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_problem1a()
     run_test_problem1b()
-    #run_test_problem1c()
+    # run_test_problem1c()
 
 
 ###############################################################################
@@ -184,7 +185,7 @@ def problem1a(m, n):
       -- If m is 30 and n is 100, the correct answer is about 1.278.
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -192,12 +193,16 @@ def problem1a(m, n):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     # -------------------------------------------------------------------------
-    
+    sumd = 0
+    for k in range(m**2, n**2 + 1):
+        sumd = sumd + math.sin(k)
+    return sumd
+
 
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement this TEST function.
+    # DONE: 5. Implement this TEST function.
     #   It TESTS the  problem1b  function defined below.
     #   Include at least **   4   ** tests.  Use the usual form:
     #
@@ -214,6 +219,26 @@ def run_test_problem1b():
     print('--------------------------------------------------')
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
+    #test 1
+    expected = 5
+    actual = problem1b(3, 5)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', actual)
+    # test 2
+    expected = 1
+    actual = problem1b(2, 1)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', actual)
+    # test 3
+    expected = 44
+    actual = problem1b(5, 40)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', actual)
+    # test 4
+    expected = 15
+    actual = problem1b(12, 6)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', actual)
 
 
 def problem1b(m, f):
@@ -232,8 +257,13 @@ def problem1b(m, f):
       -- If m is 5 and f is 40, the correct answer is 44,
            since there are 44 primes between 5 and 200.
      """
+    sumd = 0
+    for k in range(m, f * m + 1):
+        if is_prime(k) is True:
+            sumd = sumd + 1
+    return sumd
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     ###########################################################################
