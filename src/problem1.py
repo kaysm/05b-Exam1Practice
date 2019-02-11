@@ -33,9 +33,9 @@ import math as math
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_problem1a()
-    run_test_problem1b()
-    # run_test_problem1c()
+    # run_test_problem1a()
+    # run_test_problem1b()
+    run_test_problem1c()
 
 
 ###############################################################################
@@ -374,6 +374,7 @@ def problem1c(n):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 20 minutes.
     # -------------------------------------------------------------------------
+
 
 
 ###############################################################################
