@@ -374,7 +374,11 @@ def problem1c(n):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 20 minutes.
     # -------------------------------------------------------------------------
-
+    sumd = 1
+    for k in range(2, n + 1):
+        if is_prime(k) is True:
+            sumd = sumd * k
+    return sum_of_digits(sumd)
 
 
 ###############################################################################

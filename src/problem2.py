@@ -31,8 +31,8 @@ import rosegraphics as rg
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_problem2a()
-    #run_test_problem2b()
+    #run_test_problem2a()
+    run_test_problem2b()
 
 
 def run_test_problem2a():
@@ -195,7 +195,13 @@ def problem2b(rect, n, delta, win):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 25 minutes.
     # -------------------------------------------------------------------------
-
+    for k in range(n):
+        rect.attach_to(win)
+        win.render()
+        rect = rg.Rectangle(rg.Point(rect.get_lower_left_corner().x - delta,
+        rect.get_lower_left_corner().y + delta),
+        rg.Point(rect.get_upper_right_corner().x + delta,
+        rect.get_upper_right_corner().y - delta))
 
 
 # -----------------------------------------------------------------------------
